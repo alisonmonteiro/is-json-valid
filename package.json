@@ -1,0 +1,38 @@
+{
+  "name": "is-json-valid",
+  "version": "0.0.1",
+  "description": "Tiny module to check if a value is a valid JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alisonmonteiro/is-json-valid.git"
+  },
+  "keywords": [
+    "json",
+    "node",
+    "javascript",
+    "js",
+    "valid",
+    "validator"
+  ],
+  "author": {
+    "name": "Alison Monteiro",
+    "url": "alisonmonteiro.com.br"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alisonmonteiro/is-json-valid/issues"
+  },
+  "homepage": "https://github.com/alisonmonteiro/is-json-valid#readme",
+  "devDependencies": {
+    "ava": "^2.1.0",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false
+  }
+}
