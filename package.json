@@ -2,9 +2,10 @@
   "name": "is-json-valid",
   "version": "0.0.1",
   "description": "Tiny module to check if a value is a valid JSON",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava",
+    "prepublish": "babel index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,11 @@
   },
   "homepage": "https://github.com/alisonmonteiro/is-json-valid#readme",
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "ava": "^2.1.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "xo": "^0.24.0"
   },
   "xo": {
