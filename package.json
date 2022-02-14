@@ -1,6 +1,6 @@
 {
   "name": "is-json-valid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tiny module to check if a value is a valid JSON",
   "main": "bundle.js",
   "scripts": {
