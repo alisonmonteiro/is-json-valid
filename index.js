@@ -15,6 +15,7 @@ const validate = (string, options = {}) => {
     return false
   }
 
+  // eslint-disable-next-line unicorn/prefer-number-properties
   if (!isNaN(string)) {
     return false
   }
@@ -22,10 +23,10 @@ const validate = (string, options = {}) => {
   try {
     JSON.parse(string)
   } catch (error) {
-    return false
+    throw new Error(error)
   }
 
   return true
 }
 
-module.exports = validate
+export default validate
