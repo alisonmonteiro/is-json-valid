@@ -29,13 +29,12 @@
   };
 
   function validate(string) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-      allowObjects: false
-    };
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     if (isPlainObject(string) && options.allowObjects === true) {
       return true;
-    }
+    } // eslint-disable-next-line unicorn/prefer-number-properties
+
 
     if (!isString(string) || !isNaN(string)) {
       return false;
@@ -44,6 +43,10 @@
     try {
       JSON.parse(string);
     } catch (error) {
+      if (process.env.NODE_ENV === 'development') {
+        console.error(error);
+      }
+
       return false;
     }
 

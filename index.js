@@ -11,14 +11,18 @@ export default function validate(string, options = {}) {
     return true
   }
 
-  if (!isString(string) || !Number.isNaN(string)) {
+  // eslint-disable-next-line unicorn/prefer-number-properties
+  if (!isString(string) || !isNaN(string)) {
     return false
   }
 
   try {
     JSON.parse(string)
   } catch (error) {
-    console.error(error)
+    if (process.env.NODE_ENV === 'development') {
+      console.error(error)
+    }
+
     return false
   }
 
