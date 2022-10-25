@@ -19,10 +19,7 @@ export default function validate(string, options = {}) {
   try {
     JSON.parse(string)
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error(error)
-    }
-
+    console.error(error)
     return false
   }
 
