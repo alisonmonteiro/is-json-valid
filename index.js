@@ -6,27 +6,21 @@ const isPlainObject = value => (
   Object.prototype.toString.call(value) === '[object Object]'
 )
 
-const validate = (string, options = {}) => {
+export default function validate(string, options = {}) {
   if (isPlainObject(string) && options.allowObjects === true) {
     return true
   }
 
-  if (!isString(string)) {
-    return false
-  }
-
-  // eslint-disable-next-line unicorn/prefer-number-properties
-  if (!isNaN(string)) {
+  if (!isString(string) || !Number.isNaN(string)) {
     return false
   }
 
   try {
     JSON.parse(string)
   } catch (error) {
-    throw new Error(error)
+    console.error(error)
+    return false
   }
 
   return true
 }
-
-export default validate
