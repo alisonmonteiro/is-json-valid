@@ -35,7 +35,7 @@
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "ava": "^2.1.0",
+    "ava": "^5.2.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "xo": "^0.48.0"
   },
