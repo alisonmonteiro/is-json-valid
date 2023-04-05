@@ -13,6 +13,10 @@ test('invalid params', t => {
   t.is(m(''), false)
 })
 
+test('string', t => {
+  t.is(m('invalid string'), false)
+})
+
 test('objects validation', t => {
   const example = {
     xo: true,
@@ -41,9 +45,5 @@ test('json validation', t => {
 
   t.is(m(valid), true)
   t.is(m(valid, {allowObjects: true}), true)
-
-  const error = t.throws(() => {
-    m(invalid)
-  }, {instanceOf: Error})
-  t.is(error.message, 'SyntaxError: Unexpected token x in JSON at position 6')
+  t.is(m(invalid), false)
 })

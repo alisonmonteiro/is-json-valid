@@ -4,7 +4,10 @@
   "description": "Tiny module to check if a value is a valid JSON",
   "main": "bundle.js",
   "scripts": {
-    "test": "xo *.js !bundle.js !xo.config.js && ava",
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "lint": "xo *.js !bundle.js !xo.config.js",
+    "build": "babel index.js -o bundle.js",
     "prepublish": "babel index.js -o bundle.js"
   },
   "repository": {
